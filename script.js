@@ -16,18 +16,11 @@ btnConvert.addEventListener("click", function () {
     const baseTextLitersGallons = `${inputHolder} liters = ${roundUp(litersTogallons)} gallons | ${inputHolder} gallons = ${roundUp(gallonsToliters)} liters`
     const baseTextkilosPounds = `${inputHolder} kilos = ${roundUp(kilogramsTopound)} pounds | ${inputHolder} pounds = ${roundUp(poundTokilograms)} kilos`
 
+    let baseTextArr = [baseTextMetersFeet, baseTextLitersGallons, baseTextkilosPounds]
 
     if (inputHolder) {
         for (let i = 0; i < measurementEl.length; i++) {
-            if (i === 0) {
-                measurementEl[0].textContent = `${baseTextMetersFeet}`
-            }
-            if (i === 1) {
-                measurementEl[1].textContent = `${baseTextLitersGallons}`
-            }
-            if (i === 2) {
-                measurementEl[2].textContent = `${baseTextkilosPounds}`
-            }
+            measurementEl[i].textContent = `${baseTextArr[i]}`
         }
     } else {
         alert("Please input a number to convert!")
