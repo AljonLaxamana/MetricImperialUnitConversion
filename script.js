@@ -1,10 +1,10 @@
 const btnConvert = document.getElementById("btn-convert")
 const measurementEl = document.getElementsByClassName("converted-data")
-
+let inputNum = document.getElementById("input-value")
 
 
 btnConvert.addEventListener("click", function () {
-    const inputHolder = document.getElementById("input-value").value
+    const inputHolder = inputNum.value
     const metersTofeet = inputHolder * 3.281
     const feetTometers = inputHolder / 3.281
     const litersTogallons = inputHolder * 0.264172
@@ -12,9 +12,10 @@ btnConvert.addEventListener("click", function () {
     const kilogramsTopound = inputHolder * 2.20462
     const poundTokilograms = inputHolder / 2.20462
 
-    let baseTextMetersFeet = `${inputHolder} meters = ${roundUp(metersTofeet)} feet | ${inputHolder} feet = ${roundUp(feetTometers)} feet`
-    let baseTextLitersGallons = `${inputHolder} liters = ${roundUp(litersTogallons)} gallons | ${inputHolder} gallons = ${roundUp(gallonsToliters)} liters`
-    let baseTextkilosPounds = `${inputHolder} kilos = ${roundUp(kilogramsTopound)} pounds | ${inputHolder} pounds = ${roundUp(poundTokilograms)} kilos`
+    const baseTextMetersFeet = `${inputHolder} meters = ${roundUp(metersTofeet)} feet | ${inputHolder} feet = ${roundUp(feetTometers)} feet`
+    const baseTextLitersGallons = `${inputHolder} liters = ${roundUp(litersTogallons)} gallons | ${inputHolder} gallons = ${roundUp(gallonsToliters)} liters`
+    const baseTextkilosPounds = `${inputHolder} kilos = ${roundUp(kilogramsTopound)} pounds | ${inputHolder} pounds = ${roundUp(poundTokilograms)} kilos`
+
 
     if (inputHolder) {
         for (let i = 0; i < measurementEl.length; i++) {
